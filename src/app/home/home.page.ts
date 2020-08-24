@@ -41,4 +41,20 @@ export class HomePage implements OnInit {
       }
     })
   }
+
+  onSearchChange(e) {
+    let value = e.detail.value
+
+    if (value == '') {
+      this.offset = 0;
+      this.loadPokemon()
+      return
+    }
+
+    this.pokeService.findPokemon(value).subscribe(res => {
+      this.pokemon = [res]
+    }, err => {
+      this.pokemon = []
+    })
+  }
 }
