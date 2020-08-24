@@ -15,11 +15,24 @@ export class PokemonService {
   constructor(private http: HttpClient) {
   }
 
+  // Function to get Pokemon information from the API
   getPokemon (offset = 0) {
     return this.http.get(`${this.baseUrl}/pokemon?offset=${offset}&limit=25`).pipe(
+      // Using a pipe to format the data that comes from the Pokedex API into a more readable format
       map(result => {
         return result['results']
+      }),
+      map(pokemons => {
+        return pokemons.map((poke, index) => {
+          poke.image = this.getPokeImage(index + offset + 1)
+          poke.pokeIndex = offset + index + 1
+          return poke
+        })
       })
     )
+  }
+
+  getPokeImage(index) {
+    return `${this.imageUrl}${index}.png`
   }
 }
