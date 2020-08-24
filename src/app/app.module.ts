@@ -9,6 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+// Needed to make any API call at all
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
