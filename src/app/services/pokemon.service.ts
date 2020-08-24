@@ -9,7 +9,7 @@ export class PokemonService {
 
   // Base URL's for the Pokedex API
   baseUrl = 'https://pokeapi.co/api/v2'
-  imageUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
+  imageUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/'
 
   // Inject the HTTP client to make API calls
   constructor(private http: HttpClient) {
