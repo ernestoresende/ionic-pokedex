@@ -26,4 +26,14 @@
     </ion-item  >
   </ion-list>
 
+  <ion-infinite-scroll
+    (ionInfinite)="loadPokemon(true, $event)"
+  >
+    <ion-infinite-scroll-content
+      loadingSpinner="spinner"
+      loadingText="Loading more Pokémon..."  
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>
